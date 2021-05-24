@@ -1,0 +1,353 @@
+//FONTS
+@font-face 
+    font-family: 'Gilroy-Medium'
+    src: url('../fonts/Gilroy-Medium.ttf')
+
+@font-face 
+    font-family: 'Gilroy-ExtraBold'
+    src: url('../fonts/Gilroy-ExtraBold.ttf')
+
+@font-face 
+    font-family: 'Gilroy-Regular'
+    src: url('../fonts/Gilroy-Regular.ttf')
+
+//ADAPTIVE
+// Resolutions
+//  Large tablets and desktops
+$screen-xl-min: 1282px
+
+//  Little less tablets and desktops
+$screen-lxl-max: 1282px
+
+
+
+// Mixins
+//  Extra large devices
+@mixin xl
+   @media (min-width: #{$screen-xl-min})
+       @content;
+
+//  Little less than large devices
+@mixin lxl
+   @media (max-width: #{$screen-lxl-max})
+       @content;    
+   
+//  Custom devices
+// Custom devices
+@mixin rwd($screen)
+   @media (max-width: $screen+'px')
+       @content;
+    
+body
+    background: url('../img/lanterns.jpg')
+    margin: 0
+.logo
+    width: 182px
+    height: 53px
+header 
+    display: flex
+    justify-content: center
+    .header_wrap
+        padding: 37px
+        max-width: 1366px
+        display: flex
+        justify-content: space-between
+        flex-grow: 1
+    .menu
+        cursor: pointer
+    .menu_text
+        font-family: Gilroy-Medium
+        font-size: 14px
+        color: white
+        text-align: center
+.base_offer
+    color: white
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    h1
+        font-family: Gilroy-ExtraBold
+        font-size: 64px
+        margin: 80px 0 0 0
+        text-align: center
+    h4
+        font-family: Gilroy-Medium
+        font-size: 24px
+        max-width: 674px
+        text-align: center
+        margin-top: 47px
+        margin-bottom: 80px
+.cards_wrap
+    display: flex
+    justify-content: center
+.cards
+    font-family: Gilroy-Regular
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    max-width: 1366px
+    .card_wrap
+        padding: 0 14px 0 28px
+    .image_wrap
+        padding: 21px 28px 0 21px
+    .waypoint_a_wrap
+        padding: 0 14px 0 28px
+    .card
+        background: #323030
+        position: relative
+        display: flex
+        justify-content: start
+        flex-direction: column
+        @include xl
+            width: 380px
+            height: 618px
+            margin: 20px
+        @include lxl
+            width: 330px
+            height: 645px
+            margin: 18px            
+        &::before
+            content: ""
+            position: absolute
+            background-color: green
+            z-index: -10
+            background: #5F5F5F
+
+        &::after
+            content: url('../img/clip.png')
+            top: -27px
+            left: -41px
+            position: absolute
+        img
+            box-shadow: 6px 5px 11px 0px rgba(0,0,0,0.75)
+            @include xl
+                width: 327px
+            @include lxl
+                width: 291px
+        .name_row
+            display: flex
+            color: white
+            font-size: 16px
+            margin-top: 20px
+            .name
+                text-align: left
+                border-bottom: 2px solid #5E5E5E
+                padding: 0 2px 0 8px
+                flex-grow: 1
+                margin-left: 11px
+            .grey
+                padding: 2px
+                transform: translateY(-4px)
+        .first_row
+            display: flex
+            color: white
+            font-size: 16px
+            margin-top: 30px
+            .first_row_text
+                text-align: left
+                border-bottom: 2px solid #5E5E5E
+                padding: 0 2px 0 8px
+                flex-grow: 1
+                margin-left: 11px
+        .second_row
+            color: white
+            font-size: 16px
+            text-align: left
+            border-bottom: 2px solid #5E5E5E
+            padding: 2px 0 2px 0
+            flex-grow: 1
+        .comment_wrap
+            margin-top: 30px
+            color: white
+            font-size: 18px
+            font-family: Gilroy-ExtraBold
+            padding: 0 14px 0 28px
+            .row
+                border-bottom: 2px solid #5E5E5E
+                padding: 2px 2px 2px 0
+                flex-grow: 1
+        a
+            align-self: flex-end
+            width: 123px
+            height: 36px
+            border-radius: 25px
+            color: white
+            font-size: 16px
+            cursor: pointer
+            border: 2px solid #979797
+            padding: 0
+            text-align: center
+            line-height: 36px
+            position: absolute
+            text-decoration: none
+            bottom: 30px
+            right: 17px
+            &:hover
+                background: #E9856F
+                border-color:  #E9856F
+.offer
+    margin-top: 40px
+    margin-bottom: 40px
+    hr
+        max-width: 558px
+        border-color: #E9856F !important
+    .blured_container
+        display: flex
+        flex-direction: column
+        align-items: center
+        width: 100%
+        background: #ffffff27
+        font-family: Gilroy-ExtraBold
+        color: white
+        h5
+            font-size: 24px
+            margin-top: 27px
+            max-width: 965px
+            text-align: center
+            line-height: 39px
+        h1
+            font-size: 36px
+            margin-top: 49px
+            margin-bottom: 0
+            text-align: center
+        a
+            padding: 0 24px
+            height: 70px
+            background: #E9856F
+            border-radius: 45px
+            color: white
+            text-align: center
+            font-size: 22px
+            text-decoration: none
+            line-height: 70px
+            margin-bottom: 42px
+            &:hover
+                background: #E54C2D
+                padding: 2px 27px
+                transition: 0.2s
+                -webkit-box-shadow: 2px 14px 50px 0px rgba(229,76,45,1)
+                -moz-box-shadow: 2px 14px 50px 0px rgba(229,76,45,1)
+                box-shadow: 2px 14px 50px 0px rgba(229,76,45,1)
+                margin-bottom: 38px
+                
+footer
+    background-color: #1B1919
+    display: flex
+    flex-direction: row
+    justify-content: center
+    padding: 75px
+    @include rwd(773)
+            padding-right: 10px
+            padding-left: 10px
+    position: relative
+    &::before
+        content: url('../img/wooman_footer.png')
+        position: absolute
+        width: 135px
+        height: 187px
+        bottom: 0
+        left: 30%
+        @include rwd(773)
+            display: none
+    .footer_wrap
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        max-width: 1250px
+        flex-grow: 1
+    .logo
+        margin-bottom: 170px
+        @include rwd(773)
+            margin-bottom: 39px
+    .myproduce
+        max-width: 295px
+        color: white
+        font-family: Gilroy-Medium
+        font-size: 16px
+        line-height: 24px
+        margin-top: 31px
+    .my_produce_logo
+        transform: translateY(4px)
+    .up
+        font-family: Gilroy-ExtraBold
+        font-size: 20px
+        color: #E9856F
+        text-decoration: none
+    .copyright
+        color: white
+        font-family: Gilroy-Medium
+        font-size: 16px
+        line-height: 24px
+        margin-top: 120px
+        @include rwd(773)
+            margin-top: 29px
+    .first_section
+        min-width: 187px
+    .second_section
+        max-width: 300px
+        display: flex
+        justify-content: flex-end
+        flex-grow: 1
+        min-width: 137px
+    .third_section
+        min-width: 295px
+    .socials
+        padding-right: 30px
+
+.rotate1
+    &::before
+        @include xl
+            transform: rotate(-4deg)
+            width: 350px
+            height: 616px
+            top: 0
+            left: 5px
+        @include lxl
+            transform: rotate(-2deg)
+            width: 330px
+            height: 657px
+            top: 0
+            left: 0
+.rotate2
+    &::before
+        @include xl
+            transform: rotate(2deg)
+            width: 350px
+            height: 619px
+            top: 0
+            left: 0
+        @include lxl
+            transform: rotate(1.2deg)
+            height: 610px
+            width: 330px
+            top: 0
+            left: 0
+.rotate3
+    &::before
+        @include xl
+            transform: rotate(2.5deg)
+            width: 380px
+            height: 616px
+            top: 0
+            left: 0
+        @include lxl
+            transform: rotate(-3deg)
+            width: 330px
+            height: 640px
+            top: 10px
+            left: 0
+.grey
+    color: #979797
+.no_margin_top
+    margin-top: 0 !important
+.orange
+    color: #E9856F
+.hidden
+    display: none !important
+.xl_hidden
+    @include xl
+        display: none
+.lxl_hidden
+    @include lxl
+        display: none
